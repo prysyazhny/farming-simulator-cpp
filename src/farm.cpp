@@ -1,24 +1,26 @@
 #include <string>
+#include <vector>
 
-#include "ansi_clear.hpp"
+#include "farm.hpp"
 
-std::string hello() {
-   return "Hello World!";
+Farm::Farm(int rows, int columns) : rows(rows), columns(columns) {
+  for(int i = 0; i < rows; i++) {
+    std::vector<std::string> row;
+    for(int j = 0; j < columns; j++) {
+      row.push_back(".");
+    }
+    plots.push_back(row);
+  }
 }
 
-void spaces_and_dot(int number_of_spaces, std::string symbol) {
-  ansi_clear();
-  std::string input;
-  for(int i = 0; i < number_of_spaces; i++) {
-    std::cout << " ";
-  }
-  std::cout << symbol << std::endl;
-  std::cout << "Press Enter" << std::endl;
-  std::getline(std::cin, input);
+int Farm::number_of_rows() {
+  return rows;
 }
 
-void zoom(std::string symbol) {
-  for(int i = 40; i > 0; i--) {
-    spaces_and_dot(i, symbol);
-  }
+int Farm::number_of_columns() {
+  return columns;
+}
+
+std::string Farm::get_symbol(int row, int column) {
+  return plots.at(row).at(column);
 }
