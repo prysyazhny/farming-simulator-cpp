@@ -4,7 +4,7 @@
 
 #include "plot.hpp"
 
-class Soil : public Plot {
+class Carrot : public Plot {
   public:
     std::string symbol() override;
 };
