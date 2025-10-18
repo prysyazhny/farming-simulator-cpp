@@ -4,7 +4,7 @@
 #include "farm.hpp"
 #include "soil.hpp"
 
-Farm::Farm(int rows, int columns) : rows(rows), columns(columns) {
+Farm::Farm(int rows, int columns, Player *player) : rows(rows), columns(columns), player(player) {
   for(int i = 0; i < rows; i++) {
     std::vector<Plot *> row;
     for(int j = 0; j < columns; j++) {
@@ -24,7 +24,11 @@ int Farm::number_of_columns() {
 }
 
 std::string Farm::get_symbol(int row, int column) {
-  return plots.at(row).at(column)->symbol();
+  if(player->row() == row && player->column() == column) {
+    return "@";
+  } else {
+    return plots.at(row).at(column)->symbol();
+  }
 }
 
 void Farm::plant(int row, int column, Plot *plot) {
