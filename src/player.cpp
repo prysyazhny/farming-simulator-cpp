@@ -36,7 +36,7 @@ void Player::move_left()
 
 void Player::move_right()
 {
-    if (current_column < 19)
+    if (current_column < 39)
     {
         current_column += 1;
     }

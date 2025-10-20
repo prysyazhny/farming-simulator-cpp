@@ -29,7 +29,7 @@ int main()
   } term_guard;
 
   Player player;
-  Farm farm(10, 20, &player); // 10 x 20 grid
+  Farm farm(10, 40, &player); // 10 x 40 grid
   FarmPrinter printer(&farm);
   bool game_in_progress = true;
 
