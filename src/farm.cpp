@@ -5,7 +5,7 @@
 #include "soil.hpp"
 #include "carrot.hpp"
 
-Farm::Farm(int rows, int columns, Player *player) : rows(rows), columns(columns), player(player), day_count(0)
+Farm::Farm(int rows, int columns, Player *player) : rows(rows), columns(columns), player(player), day_count(1)
 {
   for (int i = 0; i < rows; i++)
   {
