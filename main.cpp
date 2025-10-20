@@ -11,7 +11,7 @@
 int main()
 {
   struct TermiosGuard
-  { // im not going to pretend like i know whats going on here but it lets you not need to press enter after each keypress
+  { 
     termios orig;
     TermiosGuard()
     {
