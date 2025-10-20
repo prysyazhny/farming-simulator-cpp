@@ -33,7 +33,7 @@ std::string Farm::get_symbol(int row, int column)
 {
   if (player->row() == row && player->column() == column)
   {
-    return "옷";
+    return "@";
   }
   else
   {
