@@ -12,20 +12,32 @@ int Player::column()
 
 void Player::move_up()
 {
-    current_row -= 1;
+    if (current_row > 0)
+    {
+        current_row -= 1;
+    }
 }
 
 void Player::move_down()
 {
-    current_row += 1;
+    if (current_row < 9)
+    {
+        current_row += 1;
+    }
 }
 
 void Player::move_left()
 {
-    current_column -= 1;
+    if (current_column > 0)
+    {
+        current_column -= 1;
+    }
 }
 
 void Player::move_right()
 {
-    current_column += 1;
+    if (current_column < 19)
+    {
+        current_column += 1;
+    }
 }

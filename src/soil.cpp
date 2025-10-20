@@ -1,5 +1,6 @@
 #include "soil.hpp"
 
-std::string Soil::symbol() {
+std::string Soil::symbol()
+{
   return ".";
 }

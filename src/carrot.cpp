@@ -1,7 +1,25 @@
+// ...existing code...
+#include "carrot.hpp"
 #include <string>
 
-#include "carrot.hpp"
+std::string Carrot::symbol()
+{
+  if (growth_stage)
+  {
+    return "V";
+  }
+  else
+  {
+    return "v";
+  }
+}
 
-std::string Carrot::symbol() {
-  return "v";
+bool Carrot::getGrowthStage() const
+{
+  return growth_stage;
+}
+
+void Carrot::grow()
+{
+  growth_stage = true;
 }

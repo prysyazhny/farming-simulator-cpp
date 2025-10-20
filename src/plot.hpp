@@ -2,7 +2,8 @@
 
 #include <string>
 
-class Plot {
-  public:
-    virtual std::string symbol() = 0;
+class Plot
+{
+public:
+  virtual std::string symbol() = 0;
 };
