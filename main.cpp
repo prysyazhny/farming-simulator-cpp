@@ -10,7 +10,7 @@
 
 int main()
 {
-  struct TermiosGuard
+  struct TermiosGuard // lets you not have to click enter after each keypress, the code works without it as well
   { 
     termios orig;
     TermiosGuard()

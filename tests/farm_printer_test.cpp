@@ -6,6 +6,7 @@
 #include "../src/player.hpp"
 #include "../src/farm.hpp"
 #include "../src/farm_printer.hpp"
+#include "../src/carrot.hpp"
 
 TEST_CASE( "it pretty prints a single plot of land" ) {
   Player player;
@@ -33,4 +34,13 @@ TEST_CASE( "it pretty prints a 2x2 farm" ) {
   Farm farm(2, 2, &player);
   FarmPrinter printer(&farm);
   REQUIRE( printer.pp() == "@ . \n. . \n" );
+}
+
+TEST_CASE( "it pretty prints a farm with a carrot planted" ) {
+  Player player;
+  Farm farm(1, 2, &player);
+  Carrot carrot;
+  farm.plant(0, 1, &carrot);
+  FarmPrinter printer(&farm);
+  REQUIRE( printer.pp() == "@ v \n" );
 }

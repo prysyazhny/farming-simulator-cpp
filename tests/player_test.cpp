@@ -24,3 +24,19 @@ TEST_CASE( "it moves the player down" ) {
   REQUIRE( player.row() == 1 );
   REQUIRE( player.column() == 0 );
 }
+
+TEST_CASE( "it moves the player left" ) {
+  Player player;
+  player.move_right();
+  player.move_left();
+  REQUIRE( player.row() == 0 );
+  REQUIRE( player.column() == 0 );
+}
+
+TEST_CASE( "it moves the player up" ) {
+  Player player;
+  player.move_down();
+  player.move_up();
+  REQUIRE( player.row() == 0 );
+  REQUIRE( player.column() == 0 );
+}
