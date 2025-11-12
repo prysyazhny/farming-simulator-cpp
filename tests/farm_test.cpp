@@ -53,7 +53,7 @@ TEST_CASE( "it allows us to plant a carrot" ) {
   Farm farm(1, 2, &player);
   Carrot carrot;
   farm.plant(0, 1, &carrot);
-  REQUIRE( farm.get_symbol(0, 1) == "v" );
+  REQUIRE( farm.get_symbol(0, 1) == "x" );
 }
 
 TEST_CASE( "it allows us to harvest a carrot" ) {
@@ -63,5 +63,5 @@ TEST_CASE( "it allows us to harvest a carrot" ) {
   farm.plant(0, 1, carrot);
   Plot *plot = nullptr;
   farm.harvest(0, 1, plot);
-  REQUIRE( farm.get_symbol(0, 1) == "." );
+  REQUIRE( farm.get_symbol(0, 1) == "x" );
 }

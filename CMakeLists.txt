@@ -41,7 +41,7 @@ add_executable(farm_test
 )
 
 add_executable(soil_test tests/soil_test.cpp src/soil.cpp)
-add_executable(carrot_test tests/carrot_test.cpp src/vegetables/carrot.cpp)
+add_executable(vegetables_test tests/vegetables_test.cpp ${VEGETABLE_SRCS})
 add_executable(player_test tests/player_test.cpp src/player.cpp)
 
 add_executable(main
@@ -56,5 +56,5 @@ add_executable(main
 target_link_libraries(farm_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(farm_printer_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(soil_test PRIVATE Catch2::Catch2WithMain)
-target_link_libraries(carrot_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(vegetables_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(player_test PRIVATE Catch2::Catch2WithMain)
