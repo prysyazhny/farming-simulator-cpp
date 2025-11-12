@@ -5,7 +5,7 @@
 
 #include "../src/player.hpp"
 #include "../src/farm.hpp"
-#include "../src/carrot.hpp"
+#include "../src/vegetables/carrot.hpp"
 
 TEST_CASE( "it can be initialized with a single plot" ) {
   Player player;

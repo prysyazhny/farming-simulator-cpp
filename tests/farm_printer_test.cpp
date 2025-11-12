@@ -6,7 +6,7 @@
 #include "../src/player.hpp"
 #include "../src/farm.hpp"
 #include "../src/farm_printer.hpp"
-#include "../src/carrot.hpp"
+#include "../src/vegetables/carrot.hpp"
 
 TEST_CASE( "it pretty prints a single plot of land" ) {
   Player player;

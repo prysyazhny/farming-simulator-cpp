@@ -15,12 +15,43 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(farm_printer_test tests/farm_printer_test.cpp src/farm_printer.cpp src/farm.cpp src/soil.cpp src/player.cpp src/carrot.cpp)
-add_executable(farm_test tests/farm_test.cpp src/farm.cpp src/soil.cpp src/carrot.cpp src/player.cpp)
+set(VEGETABLE_SRCS
+  src/vegetables/carrot.cpp
+  src/vegetables/beet.cpp
+  src/vegetables/lettuce.cpp
+  src/vegetables/spinach.cpp
+  src/vegetables/brussels_sprouts.cpp
+)
+
+add_executable(farm_printer_test
+  tests/farm_printer_test.cpp
+  src/farm_printer.cpp
+  src/farm.cpp
+  src/soil.cpp
+  src/player.cpp
+  ${VEGETABLE_SRCS}
+)
+
+add_executable(farm_test
+  tests/farm_test.cpp
+  src/farm.cpp
+  src/soil.cpp
+  src/player.cpp
+  ${VEGETABLE_SRCS}
+)
+
 add_executable(soil_test tests/soil_test.cpp src/soil.cpp)
-add_executable(carrot_test tests/carrot_test.cpp src/carrot.cpp)
+add_executable(carrot_test tests/carrot_test.cpp src/vegetables/carrot.cpp)
 add_executable(player_test tests/player_test.cpp src/player.cpp)
-add_executable(main main.cpp src/farm.cpp src/farm_printer.cpp src/soil.cpp src/carrot.cpp src/player.cpp)
+
+add_executable(main
+  main.cpp
+  src/farm.cpp
+  src/farm_printer.cpp
+  src/soil.cpp
+  src/player.cpp
+  ${VEGETABLE_SRCS}
+)
 
 target_link_libraries(farm_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(farm_printer_test PRIVATE Catch2::Catch2WithMain)

@@ -3,7 +3,7 @@
 #include <catch2/benchmark/catch_constructor.hpp>
 #include <catch2/generators/catch_generators_range.hpp>
 
-#include "../src/carrot.hpp"
+#include "../src/vegetables/carrot.hpp"
 
 TEST_CASE( "it returns a v as its when it is a seedling" ) {
   Carrot carrot;
@@ -13,13 +13,13 @@ TEST_CASE( "it returns a v as its when it is a seedling" ) {
 TEST_CASE( "it grows" ) {
   Carrot carrot;
   REQUIRE( carrot.symbol() == "v" );
-  carrot.grow();
+  carrot.endDay();
   REQUIRE( carrot.symbol() == "V" );
 }
 
 TEST_CASE( "it reports its growth stage" ) {
   Carrot carrot;
   REQUIRE( carrot.getGrowthStage() == false );
-  carrot.grow();
+  carrot.endDay();
   REQUIRE( carrot.getGrowthStage() == true );
 }
