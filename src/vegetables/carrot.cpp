@@ -14,6 +14,7 @@ std::string Carrot::symbol()
   {
     return "C";
   }
+  return "";
 }
 
 Plot::GrowthStage Carrot::getGrowthStage() const

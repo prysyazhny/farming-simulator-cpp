@@ -6,27 +6,27 @@
 #include "../src/player.hpp"
 
 TEST_CASE( "it starts the player in row zero, column zero" ) {
-  Player player;
+  Player player(10, 10); // bounds
   REQUIRE( player.row() == 0 );
   REQUIRE( player.column() == 0 );
 }
 
 TEST_CASE( "it moves the player to the right" ) {
-  Player player;
+  Player player(10, 10); // bounds
   player.move_right();
   REQUIRE( player.row() == 0 );
   REQUIRE( player.column() == 1 );
 }
 
 TEST_CASE( "it moves the player down" ) {
-  Player player;
+  Player player(10, 10); // bounds
   player.move_down();
   REQUIRE( player.row() == 1 );
   REQUIRE( player.column() == 0 );
 }
 
 TEST_CASE( "it moves the player left" ) {
-  Player player;
+  Player player(10, 10); // bounds
   player.move_right();
   player.move_left();
   REQUIRE( player.row() == 0 );
@@ -34,7 +34,7 @@ TEST_CASE( "it moves the player left" ) {
 }
 
 TEST_CASE( "it moves the player up" ) {
-  Player player;
+  Player player(10, 10); // bounds
   player.move_down();
   player.move_up();
   REQUIRE( player.row() == 0 );

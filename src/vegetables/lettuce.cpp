@@ -14,6 +14,7 @@ std::string Lettuce::symbol()
     {
         return "L";
     }
+    return "";
 }
 
 Plot::GrowthStage Lettuce::getGrowthStage() const

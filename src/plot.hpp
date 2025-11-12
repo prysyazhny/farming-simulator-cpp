@@ -13,5 +13,6 @@ public:
     SPROUT,
     MATURE
   };
+  virtual ~Plot() = default;
   virtual std::string symbol() = 0;
 };

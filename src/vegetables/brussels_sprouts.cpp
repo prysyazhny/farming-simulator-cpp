@@ -14,6 +14,7 @@ std::string BrusselsSprouts::symbol()
     {
         return "R";
     }
+    return "";
 }
 
 Plot::GrowthStage BrusselsSprouts::getGrowthStage() const

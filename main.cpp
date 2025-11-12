@@ -33,8 +33,10 @@ int main()
     }
   } term_guard;
 
-  Player player;
-  Farm farm(10, 40, &player); // 10 x 40 grid
+  int grid_rows = 10;
+  int grid_columns = 40;
+  Player player(grid_rows, grid_columns); // pass bounds for player
+  Farm farm(grid_rows, grid_columns, &player);
   FarmPrinter printer(&farm);
   bool game_in_progress = true;
 

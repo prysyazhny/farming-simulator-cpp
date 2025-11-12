@@ -14,6 +14,7 @@ std::string Spinach::symbol()
     {
         return "P";
     }
+    return "";
 }
 
 Plot::GrowthStage Spinach::getGrowthStage() const

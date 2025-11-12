@@ -14,6 +14,7 @@ std::string Beet::symbol()
     {
         return "B";
     }
+    return "";
 }
 
 Plot::GrowthStage Beet::getGrowthStage() const

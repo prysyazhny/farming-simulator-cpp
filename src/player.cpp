@@ -20,7 +20,7 @@ void Player::move_up()
 
 void Player::move_down()
 {
-    if (current_row < 9)
+    if (current_row < bounds_rows - 1)
     {
         current_row += 1;
     }
@@ -36,7 +36,7 @@ void Player::move_left()
 
 void Player::move_right()
 {
-    if (current_column < 39)
+    if (current_column < bounds_columns - 1)
     {
         current_column += 1;
     }
