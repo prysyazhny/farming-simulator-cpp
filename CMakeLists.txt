@@ -41,8 +41,13 @@ add_executable(farm_test
 )
 
 add_executable(soil_test tests/soil_test.cpp src/soil.cpp)
-add_executable(vegetables_test tests/vegetables_test.cpp ${VEGETABLE_SRCS})
 add_executable(player_test tests/player_test.cpp src/player.cpp)
+
+add_executable(beet_test tests/beet_test.cpp src/vegetables/beet.cpp)
+add_executable(carrot_test tests/carrot_test.cpp src/vegetables/carrot.cpp)
+add_executable(lettuce_test tests/lettuce_test.cpp src/vegetables/lettuce.cpp)
+add_executable(spinach_test tests/spinach_test.cpp src/vegetables/spinach.cpp)
+add_executable(brussels_sprouts_test tests/brussels_sprouts_test.cpp src/vegetables/brussels_sprouts.cpp)
 
 add_executable(main
   main.cpp
@@ -56,5 +61,10 @@ add_executable(main
 target_link_libraries(farm_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(farm_printer_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(soil_test PRIVATE Catch2::Catch2WithMain)
-target_link_libraries(vegetables_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(player_test PRIVATE Catch2::Catch2WithMain)
+
+target_link_libraries(beet_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(carrot_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(lettuce_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(spinach_test PRIVATE Catch2::Catch2WithMain)
+target_link_libraries(brussels_sprouts_test PRIVATE Catch2::Catch2WithMain)
