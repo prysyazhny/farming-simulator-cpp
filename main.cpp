@@ -15,7 +15,7 @@
 
 int main()
 {
-  struct TermiosGuard // lets you not have to click enter after each keypress, the code works without it as well
+  struct TermiosGuard
   {
     termios orig;
     TermiosGuard()
@@ -35,9 +35,11 @@ int main()
 
   int grid_rows = 10;
   int grid_columns = 40;
-  Player player(grid_rows, grid_columns); // pass bounds for player
+
+  Player player(grid_rows, grid_columns);
   Farm farm(grid_rows, grid_columns, &player);
   FarmPrinter printer(&farm);
+
   bool game_in_progress = true;
 
   while (game_in_progress)
@@ -50,61 +52,65 @@ int main()
       continue;
 
     if (c == 'q')
-    { // quit game
+    {
       game_in_progress = false;
     }
     else if (c == 'w')
     {
       player.move_up();
+      farm.check_bunny_scared();
     }
     else if (c == 'a')
     {
       player.move_left();
+      farm.check_bunny_scared();
     }
     else if (c == 's')
     {
       player.move_down();
+      farm.check_bunny_scared();
     }
     else if (c == 'd')
     {
       player.move_right();
+      farm.check_bunny_scared();
     }
     else if (c == 'e')
-    { // end day
+    {
       farm.end_day();
     }
     else if (c == 'f')
-    { // harvest
+    {
       Plot *plot = nullptr;
       farm.harvest(player.row(), player.column(), plot);
     }
     else if (c == ' ')
-    { // water plant
+    {
       Plot *plot = nullptr;
       farm.water(player.row(), player.column(), plot);
     }
     else if (c == 'c')
-    { // plant carrot
+    {
       Carrot *carrot = new Carrot();
       farm.plant(player.row(), player.column(), carrot);
     }
     else if (c == 'l')
-    { // plant lettuce
+    {
       Lettuce *lettuce = new Lettuce();
       farm.plant(player.row(), player.column(), lettuce);
     }
     else if (c == 'p')
-    { // plant spinach
+    {
       Spinach *spinach = new Spinach();
       farm.plant(player.row(), player.column(), spinach);
     }
     else if (c == 'b')
-    { // plant beet
+    {
       Beet *beet = new Beet();
       farm.plant(player.row(), player.column(), beet);
     }
     else if (c == 'r')
-    { // plant brussels sprouts
+    {
       BrusselsSprouts *brussels_sprouts = new BrusselsSprouts();
       farm.plant(player.row(), player.column(), brussels_sprouts);
     }

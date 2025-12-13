@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-
 #include "plot.hpp"
 
 class Soil : public Plot

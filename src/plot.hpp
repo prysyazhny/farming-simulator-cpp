@@ -4,8 +4,9 @@
 
 class Plot
 {
-  private:
-    int age;
+private:
+  int age;
+
 public:
   enum GrowthStage
   {
@@ -13,6 +14,7 @@ public:
     SPROUT,
     MATURE
   };
+
   virtual ~Plot() = default;
   virtual std::string symbol() = 0;
 };

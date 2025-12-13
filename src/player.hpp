@@ -10,9 +10,12 @@ private:
   int bounds_columns;
 
 public:
-  Player(int boundRows, int boundColumns) : bounds_rows(boundRows), bounds_columns(boundColumns) {}
-  int row();
-  int column();
+  Player(int boundRows, int boundColumns)
+      : bounds_rows(boundRows), bounds_columns(boundColumns) {}
+
+  int row() const;
+  int column() const;
+
   void move_up();
   void move_down();
   void move_left();

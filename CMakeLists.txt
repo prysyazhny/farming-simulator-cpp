@@ -29,6 +29,7 @@ add_executable(farm_printer_test
   src/farm.cpp
   src/soil.cpp
   src/player.cpp
+  src/bunny.cpp
   ${VEGETABLE_SRCS}
 )
 
@@ -37,6 +38,7 @@ add_executable(farm_test
   src/farm.cpp
   src/soil.cpp
   src/player.cpp
+  src/bunny.cpp
   ${VEGETABLE_SRCS}
 )
 
@@ -55,9 +57,16 @@ add_executable(main
   src/farm_printer.cpp
   src/soil.cpp
   src/player.cpp
+  src/bunny.cpp
   ${VEGETABLE_SRCS}
 )
 
+add_executable(bunny_test
+  tests/bunny_test.cpp
+  src/bunny.cpp
+  src/player.cpp
+)
+target_link_libraries(bunny_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(farm_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(farm_printer_test PRIVATE Catch2::Catch2WithMain)
 target_link_libraries(soil_test PRIVATE Catch2::Catch2WithMain)
